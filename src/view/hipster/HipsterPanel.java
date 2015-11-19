@@ -1,11 +1,12 @@
 package view.hipster;
 
-import controller.hipster.HipsterController;
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.*;
+import controller.hipster.*;
+import model.hipster.*;
 
 
 public class HipsterPanel extends JPanel
@@ -34,6 +35,7 @@ public class HipsterPanel extends JPanel
 		bookTitleLabel = new JLabel("The title");
 		changeBookButton = new JButton("Change Books");
 		maxClicks = baseController.getFirstHipster().getHipsterBooks().length;
+		startClicks = 0;
 		
 		setUpCombo();
 		setUpPanel();
@@ -54,6 +56,12 @@ public class HipsterPanel extends JPanel
 		this.setLayout(baseLayout);
 		this.setBackground(Color.ORANGE);
 		this.add(phraseComboBox);
+		this.add(bookPageCountLabel);
+		this.add(bookAuthorLabel);
+		this.add(bookTitleLabel);
+		this.add(bookPriceLabel);
+		this.add(bookSubjectLabel);
+		this.add(changeBookButton);
 	}
 	
 	private void setUpLayout(){}
@@ -72,5 +80,37 @@ public class HipsterPanel extends JPanel
 				baseController.getBaseFrame().setTitle(updatedTitle);
 			}
 		});
+		
+		changeBookButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+				Book [] tempBooks = baseController.getFirstHipster().getHipsterBooks();
+				if(startClicks < maxClicks)
+				{
+					bookSubjectLabel.setText("Book subject: " + tempBooks[startClicks].getSubject());
+					bookAuthorLabel.setText("Book author: " + tempBooks[startClicks].getAuthor());
+					bookTitleLabel.setText("Book title: " + tempBooks[startClicks].getTitle());
+					bookPageCountLabel.setText("Book pages: " + tempBooks[startClicks].getPageCount());
+					bookPriceLabel.setText("Book price: " + tempBooks[startClicks].getPrice());
+					startClicks++;
+				}
+				else
+				{
+					startClicks = 0;
+					bookSubjectLabel.setText("Book subject:" );
+					bookAuthorLabel.setText("Book author: ");
+					bookTitleLabel.setText("Book title: ");
+					bookPageCountLabel.setText("Book pages: ");
+					bookPriceLabel.setText("Book price:");
+				}
+			}
+		});
 	}
 }
+
+
+
+
+
+
