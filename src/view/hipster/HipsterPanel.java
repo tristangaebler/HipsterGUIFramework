@@ -82,16 +82,21 @@ public class HipsterPanel extends JPanel
 		baseLayout.putConstraint(SpringLayout.WEST, bookPageCountLabel, 0, SpringLayout.WEST, phraseComboBox);
 	}
 	
+	private void changeColor()
+	{
+		int red = (int) (Math.random() * 256);
+		int green = (int) (Math.random() * 256);
+		int blue = (int) (Math.random() * 256);
+		setBackground(new Color(red, green, blue));
+	}
+	
 	private void setUpListeners()
 	{
 		phraseComboBox.addActionListener(new ActionListener()
 		{
 			public void actionPerformed(ActionEvent selection)
 			{
-				int red = (int) (Math.random() * 256);
-				int green = (int) (Math.random() * 256);
-				int blue = (int) (Math.random() * 256);
-				setBackground(new Color(red, green, blue));
+				changeColor();
 				String updatedTitle = phraseComboBox.getSelectedItem().toString();
 				baseController.getBaseFrame().setTitle(updatedTitle);
 			}
@@ -101,6 +106,7 @@ public class HipsterPanel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
+				changeColor();
 				Book [] tempBooks = baseController.getFirstHipster().getHipsterBooks();
 				if(startClicks < maxClicks)
 				{
