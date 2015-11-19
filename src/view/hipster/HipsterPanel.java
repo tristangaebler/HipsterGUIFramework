@@ -13,12 +13,27 @@ public class HipsterPanel extends JPanel
 	private HipsterController baseController;
 	private SpringLayout baseLayout;
 	private JComboBox<String> phraseComboBox;
+	private JLabel bookPageCountLabel;
+	private JLabel bookAuthorLabel;
+	private JLabel bookTitleLabel;
+	private JLabel bookPriceLabel;
+	private JLabel bookSubjectLabel;
+	private JButton changeBookButton;
+	private int maxClicks;
+	private int startClicks;
 	
 	public HipsterPanel(HipsterController baseController)
 	{
 		this.baseController = baseController;
 		baseLayout = new SpringLayout();
 		phraseComboBox = new JComboBox<String>();
+		bookPageCountLabel = new JLabel("The page count");
+		bookAuthorLabel = new JLabel("The author");
+		bookPriceLabel = new JLabel("The price");
+		bookSubjectLabel = new JLabel("The subject");
+		bookTitleLabel = new JLabel("The title");
+		changeBookButton = new JButton("Change Books");
+		maxClicks = baseController.getFirstHipster().getHipsterBooks().length;
 		
 		setUpCombo();
 		setUpPanel();
