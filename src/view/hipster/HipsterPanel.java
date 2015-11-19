@@ -66,20 +66,20 @@ public class HipsterPanel extends JPanel
 	
 	private void setUpLayout()
 	{
-		baseLayout.putConstraint(SpringLayout.WEST, phraseComboBox, 194, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.NORTH, bookPageCountLabel, 0, SpringLayout.NORTH, bookAuthorLabel);
-		baseLayout.putConstraint(SpringLayout.WEST, bookPageCountLabel, 9, SpringLayout.EAST, bookAuthorLabel);
-		baseLayout.putConstraint(SpringLayout.NORTH, bookAuthorLabel, 0, SpringLayout.NORTH, bookSubjectLabel);
-		baseLayout.putConstraint(SpringLayout.WEST, bookAuthorLabel, 18, SpringLayout.EAST, bookSubjectLabel);
 		baseLayout.putConstraint(SpringLayout.NORTH, bookSubjectLabel, 29, SpringLayout.NORTH, this);
 		baseLayout.putConstraint(SpringLayout.WEST, bookSubjectLabel, 10, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.NORTH, phraseComboBox, 21, SpringLayout.SOUTH, changeBookButton);
-		baseLayout.putConstraint(SpringLayout.NORTH, changeBookButton, 20, SpringLayout.SOUTH, bookPageCountLabel);
-		baseLayout.putConstraint(SpringLayout.WEST, changeBookButton, 152, SpringLayout.WEST, this);
-		baseLayout.putConstraint(SpringLayout.NORTH, bookPriceLabel, 0, SpringLayout.NORTH, bookPageCountLabel);
-		baseLayout.putConstraint(SpringLayout.WEST, bookPriceLabel, 6, SpringLayout.EAST, bookPageCountLabel);
-		baseLayout.putConstraint(SpringLayout.NORTH, bookTitleLabel, 0, SpringLayout.NORTH, bookPageCountLabel);
-		baseLayout.putConstraint(SpringLayout.WEST, bookTitleLabel, 17, SpringLayout.EAST, bookPriceLabel);
+		baseLayout.putConstraint(SpringLayout.NORTH, changeBookButton, 6, SpringLayout.SOUTH, bookPageCountLabel);
+		baseLayout.putConstraint(SpringLayout.NORTH, phraseComboBox, 6, SpringLayout.SOUTH, changeBookButton);
+		baseLayout.putConstraint(SpringLayout.WEST, changeBookButton, 0, SpringLayout.WEST, bookPageCountLabel);
+		baseLayout.putConstraint(SpringLayout.WEST, bookTitleLabel, 0, SpringLayout.WEST, bookPageCountLabel);
+		baseLayout.putConstraint(SpringLayout.SOUTH, bookTitleLabel, -6, SpringLayout.NORTH, bookSubjectLabel);
+		baseLayout.putConstraint(SpringLayout.SOUTH, bookPriceLabel, -236, SpringLayout.SOUTH, this);
+		baseLayout.putConstraint(SpringLayout.NORTH, bookAuthorLabel, 6, SpringLayout.SOUTH, bookPriceLabel);
+		baseLayout.putConstraint(SpringLayout.WEST, bookPriceLabel, 0, SpringLayout.WEST, bookPageCountLabel);
+		baseLayout.putConstraint(SpringLayout.NORTH, bookPageCountLabel, 6, SpringLayout.SOUTH, bookAuthorLabel);
+		baseLayout.putConstraint(SpringLayout.WEST, bookPageCountLabel, 0, SpringLayout.WEST, bookAuthorLabel);
+		baseLayout.putConstraint(SpringLayout.WEST, bookAuthorLabel, 0, SpringLayout.WEST, bookSubjectLabel);
+		baseLayout.putConstraint(SpringLayout.WEST, phraseComboBox, 0, SpringLayout.WEST, bookPageCountLabel);
 	}
 	
 	private void setUpListeners()
