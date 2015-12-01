@@ -11,7 +11,7 @@ import model.hipster.*;
 
 public class HipsterPanel extends JPanel
 {
-	private HipsterController baseController;
+	private HipsterContoller baseController;
 	private SpringLayout baseLayout;
 	private JComboBox<String> phraseComboBox;
 	private JLabel bookPageCountLabel;
@@ -23,7 +23,7 @@ public class HipsterPanel extends JPanel
 	private int maxClicks;
 	private int startClicks;
 	
-	public HipsterPanel(HipsterController baseController)
+	public HipsterPanel(HipsterContoller baseController)
 	{
 		this.baseController = baseController;
 		baseLayout = new SpringLayout();

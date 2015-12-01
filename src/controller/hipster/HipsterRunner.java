@@ -4,7 +4,7 @@ public class HipsterRunner
 {
 	public static void main(String [] args)
 	{
-		HipsterController hipsterController = new HipsterController();
+		HipsterContoller hipsterController = new HipsterContoller();
 		hipsterController.start();
 	}
 }

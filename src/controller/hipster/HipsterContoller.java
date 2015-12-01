@@ -3,12 +3,12 @@ package controller.hipster;
 import view.hipster.HipsterFrame;
 import model.hipster.Hipster;
 
-public class HipsterController
+public class HipsterContoller
 {
 	private HipsterFrame baseFrame;
 	private Hipster firstHipster;
 	
-	public HipsterController()
+	public HipsterContoller()
 	{
 		firstHipster = new Hipster();
 		baseFrame = new HipsterFrame(this);

@@ -8,10 +8,10 @@ import javax.swing.*;
 public class HipsterFrame extends JFrame
 {
 
-	private HipsterController baseController;
+	private HipsterContoller baseController;
 	private HipsterPanel basePanel;
 	
-	public HipsterFrame(HipsterController baseController)
+	public HipsterFrame(HipsterContoller baseController)
 	{
 		this.baseController = baseController;
 		basePanel = new HipsterPanel(baseController);
@@ -37,11 +37,11 @@ public class HipsterFrame extends JFrame
 	}
 	
 	//Getters and setters for baseController
-	public HipsterController getBaseController()
+	public HipsterContoller getBaseController()
 	{
 		return baseController;
 	}
-	public void setBaseController(HipsterController baseController)
+	public void setBaseController(HipsterContoller baseController)
 	{
 		this.baseController = baseController;
 	}
